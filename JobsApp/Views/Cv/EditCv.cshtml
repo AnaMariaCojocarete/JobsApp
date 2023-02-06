@@ -5,24 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>EditCv</h1>
+<h1>Edit Cv</h1>
 
-<h4>CVModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Idcv" class="control-label"></label>
-                <input asp-for="Idcv" class="form-control" />
-                <span asp-validation-for="Idcv" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Idprofile" class="control-label"></label>
-                <input asp-for="Idprofile" class="form-control" />
-                <span asp-validation-for="Idprofile" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <label asp-for="LastName" class="control-label"></label>
                 <input asp-for="LastName" class="form-control" />

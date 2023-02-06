@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>MyAnnouncements</h1>
+<h1>My Announcements</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -56,9 +56,15 @@
                 @Html.DisplayFor(modelItem => item.ExperienceLevel)
             </td>
             <td>
-                    @Html.ActionLink("Edit", "Edit", new {  id=item.Idannouncement  }) |
-                    @Html.ActionLink("Details", "Details", new {  id=item.Idannouncement  }) |
+                <div>
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.Idannouncement  })
+                </div>
+                <div>
+                    @Html.ActionLink("Details", "Details", new {  id=item.Idannouncement  })
+                </div>
+                <div>
                     @Html.ActionLink("Delete", "Delete", new {  id=item.Idannouncement  })
+                </div>   
             </td>
         </tr>
 }

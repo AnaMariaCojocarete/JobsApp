@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>IndexCv</h1>
+<h1>Cv List</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -50,9 +50,15 @@
                 @Html.DisplayFor(modelItem => item.JobTitle)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Idcv  }) |
-                @Html.ActionLink("Details", "Details", new {  id=item.Idcv  }) |
-                @Html.ActionLink("Delete", "Delete", new {  id=item.Idcv  })
+                <div>
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.Idcv  })
+                </div>
+                <div>
+                    @Html.ActionLink("Details", "Details", new {  id=item.Idcv  })
+                </div>
+                <div>
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.Idcv  })
+                </div>
             </td>
         </tr>
 }

@@ -5,20 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>MyApplications</h1>
+<h1>My Applications</h1>
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Idapplication)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Idannouncement)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Idcv)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Date)
             </th>
@@ -29,21 +20,18 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Idapplication)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Idannouncement)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Idcv)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.ActionLink("Announcement", "Details", "Announcement", new {  id=item.Idannouncement  }) |
-                @Html.ActionLink("CV", "Details", "Cv", new {  id=item.Idcv  })
-                @Html.ActionLink("Delete", "Delete", new {  id=item.Idapplication  })
+                <div>
+                    @Html.ActionLink("Announcement", "Details", "Announcement", new {  id=item.Idannouncement  })
+                </div>
+                <div>
+                    @Html.ActionLink("CV", "Details", "Cv", new {  id=item.Idcv  })
+                </div>
+                <div>
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.Idapplication  })
+                </div>
             </td>
         </tr>
 }

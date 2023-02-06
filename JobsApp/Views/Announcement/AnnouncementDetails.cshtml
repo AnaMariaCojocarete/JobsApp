@@ -39,16 +39,26 @@
 <div>
     @if (User.IsInRole("Candidate"))
     {
-        @Html.ActionLink("Apply", "ApplyList", "Cv", new {  id=Model.Idannouncement  })
+        <div>
+            @Html.ActionLink("Apply", "ApplyList", "Cv", new {  id=Model.Idannouncement  })
+        </div>
     }
     @if (User.Identity.Name == Model.Idprofile)
     {
-        @Html.ActionLink("Applications", "ApplicationsToAnnouncement", "Application", new {  id=Model.Idannouncement  })
+        <div>
+            @Html.ActionLink("Applications", "ApplicationsToAnnouncement", "Application", new {  id=Model.Idannouncement  })
+        </div>   
     }
     @if (User.Identity.Name == Model.Idprofile)
     {
-        @Html.ActionLink("Edit", "Edit", new {  id = Model.Idannouncement  })
+        <div>
+            @Html.ActionLink("Edit", "Edit", new {  id = Model.Idannouncement  })
+        </div>
     }
-    @Html.ActionLink("Company Details", "Details", "Profile", new {  id=Model.Idprofile  })
-    <a asp-action="Index">Back to List</a>
+    <div>
+        @Html.ActionLink("Company Details", "Details", "Profile", new {  id=Model.Idprofile  })
+    </div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>

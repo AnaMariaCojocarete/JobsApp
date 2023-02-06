@@ -5,24 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>EditAnnouncement</h1>
+<h1>Edit Announcement</h1>
 
-<h4>AnnouncementModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Idannouncement" class="control-label"></label>
-                <input asp-for="Idannouncement" class="form-control" />
-                <span asp-validation-for="Idannouncement" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Idprofile" class="control-label"></label>
-                <input asp-for="Idprofile" class="form-control" />
-                <span asp-validation-for="Idprofile" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
                 <input asp-for="Title" class="form-control" />

@@ -7,9 +7,6 @@
 
 <h1>ApplyList</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -50,12 +47,12 @@
                 @Html.DisplayFor(modelItem => item.JobTitle)
             </td>
             <td>
-                    @Html.ActionLink("Choose", "ApplyDetails", new {  id=item.Idcv  })
+                @Html.ActionLink("Choose", "ApplyDetails", new {  id=item.Idcv  })
             </td>
-                <td>
-                    @Html.ActionLink("Cv Details", "Details", new {  id=item.Idcv  })
-                </td>
-        </tr>
+            <td>
+                @Html.ActionLink("Cv Details", "Details", new {  id=item.Idcv  })
+            </td>
+        </tr> 
 }
     </tbody>
 </table>

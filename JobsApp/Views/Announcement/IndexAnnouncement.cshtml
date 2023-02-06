@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>IndexAnnouncement</h1>
+<h1>Announcements</h1>
 
 @if (User.IsInRole("Company"))
 {
@@ -48,12 +48,17 @@
                 @Html.DisplayFor(modelItem => item.ExperienceLevel)
             </td>
             <td>
-                
-                @Html.ActionLink("Details", "Details", new {  id=item.Idannouncement  }) |
+                <div>
+                    @Html.ActionLink("Details", "Details", new {  id=item.Idannouncement  })
+                </div>
                 @if (User.Identity.Name == item.Idprofile)
                 {
-                    @Html.ActionLink("Delete", "Delete", new {  id=item.Idannouncement  }) 
-                    @Html.ActionLink("Edit", "Edit", new {  id=item.Idannouncement  }) 
+                    <div>
+                        @Html.ActionLink("Delete", "Delete", new {  id=item.Idannouncement  }) 
+                    </div>
+                    <div>
+                        @Html.ActionLink("Edit", "Edit", new {  id=item.Idannouncement  })
+                    </div>   
                 }
             </td>
         </tr>

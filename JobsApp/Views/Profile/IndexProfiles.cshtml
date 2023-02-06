@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>IndexProfiles</h1>
+<h1>Index Profiles</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -38,12 +38,18 @@
                 @Html.DisplayFor(modelItem => item.Contact)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new {  id=item.Idprofile  })
+                <div>
+                    @Html.ActionLink("Details", "Details", new {  id=item.Idprofile  })
+                </div>
+                
                     @if(User.Identity.Name == item.Idprofile)
                     {
-                        @Html.ActionLink("Edit", "Edit", new {  id=item.Idprofile  })
-                 
-                        @Html.ActionLink("Delete", "Delete", new {  id=item.Idprofile  })
+                        <div>
+                            @Html.ActionLink("Edit", "Edit", new {  id=item.Idprofile  })
+                        </div>
+                        <div>
+                            @Html.ActionLink("Delete", "Delete", new {  id=item.Idprofile  })
+                        </div> 
                     }
             </td>
         </tr>

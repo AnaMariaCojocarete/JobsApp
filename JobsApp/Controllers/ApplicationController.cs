@@ -44,6 +44,7 @@ namespace JobsApp.Controllers
         }
 
         // GET: ApplicationController/Create
+        [Authorize(Roles = "Candidate")]
         public ActionResult Create()
         {
             var model = new ApplicationModel();
@@ -51,6 +52,7 @@ namespace JobsApp.Controllers
         }
 
         // POST: ApplicationController/Create
+        [Authorize(Roles = "Candidate")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)

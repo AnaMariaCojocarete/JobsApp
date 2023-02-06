@@ -5,10 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>AnnouncementDetails</h1>
+<h1>Profile Details</h1>
 
 <div>
-    <h4>ProfileModel</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -40,17 +39,26 @@
 <div>
     @if (User.Identity.Name == Model.Idprofile)
     {
-        @Html.ActionLink("Edit", "Edit", new {  id = Model.Idprofile  })
+        <div>
+            @Html.ActionLink("Edit", "Edit", new {  id = Model.Idprofile  })
+        </div>
+        
         if (User.IsInRole("Candidate")) {
-            @Html.ActionLink("My CVs", "Index", "Cv", new {  id = Model.Idprofile  })
+            <div>
+                @Html.ActionLink("My CVs", "Index", "Cv", new {  id = Model.Idprofile  })
+            </div>
         }
         if (User.IsInRole("Company"))
         {
-            @Html.ActionLink("My Announcements", "MyAnnouncements", "Announcement", new {  idProfile = User.Identity.Name  })
+            <div>
+                @Html.ActionLink("My Announcements", "MyAnnouncements", "Announcement", new {  idProfile = User.Identity.Name  })
+            </div>
         } 
     }
     else if (Model.Idprofile == null)
     {
-        @Html.ActionLink("Create Profile", "Create");
+        <div>
+            @Html.ActionLink("Create Profile", "Create")
+        </div>
     }
 </div>

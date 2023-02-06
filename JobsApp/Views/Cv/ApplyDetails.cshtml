@@ -5,10 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>ApplyDetails</h1>
+<h1>Apply Details</h1>
 
 <div>
-    <h4>CVModel</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -92,6 +91,10 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Apply", "Create", "Application", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+    <div>
+        @Html.ActionLink("Apply", "Create", "Application", new { /* id = Model.PrimaryKey */ })
+    </div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>

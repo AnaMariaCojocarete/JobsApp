@@ -5,10 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>CvDetails</h1>
+<h1>Cv Details</h1>
 
 <div>
-    <h4>CVModel</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -92,6 +91,23 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.Idcv }) |
-    <a asp-action="Index">Back to List</a>
+    @if(User.IsInRole("Candidate"))
+    {
+        <div>
+            @Html.ActionLink("Edit", "Edit", new {  id = Model.Idcv })
+        </div>
+    }
+    @if(User.IsInRole("Candidate"))
+    {
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    }
+    else
+    {
+        <div>
+            @Html.ActionLink("Back to announcements", "Index", "Announcement", new {  id = Model.Idcv })
+        </div>
+    }
+
 </div>
