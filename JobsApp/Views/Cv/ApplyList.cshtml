@@ -1,0 +1,61 @@
+﻿@model IEnumerable<JobsApp.Models.CVModel>
+
+@{
+    ViewData["Title"] = "ApplyList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ApplyList</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobTitle)
+            </td>
+            <td>
+                    @Html.ActionLink("Choose", "ApplyDetails", new {  id=item.Idcv  })
+            </td>
+                <td>
+                    @Html.ActionLink("Cv Details", "Details", new {  id=item.Idcv  })
+                </td>
+        </tr>
+}
+    </tbody>
+</table>

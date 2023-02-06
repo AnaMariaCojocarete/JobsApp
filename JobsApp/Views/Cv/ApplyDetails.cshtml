@@ -1,0 +1,97 @@
+﻿@model JobsApp.Models.CVModel
+
+@{
+    ViewData["Title"] = "ApplyDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ApplyDetails</h1>
+
+<div>
+    <h4>CVModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Idcv)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Idcv)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Idprofile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Idprofile)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Mail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Mail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JobExperience)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JobExperience)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HardSkills)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HardSkills)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SoftSkills)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SoftSkills)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Education)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Education)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Certifications)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Certifications)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Apply", "Create", "Application", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

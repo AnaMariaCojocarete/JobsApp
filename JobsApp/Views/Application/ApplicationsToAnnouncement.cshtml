@@ -1,0 +1,34 @@
+﻿@model IEnumerable<JobsApp.Models.ApplicationModel>
+
+@{
+    ViewData["Title"] = "ApplicationsToAnnouncement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Applications To Announcement</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Application Date
+            </th>
+            <th>
+                Details
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.ActionLink("Candidate CV", "Details", "Cv", new {  id=item.Idcv  }) |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

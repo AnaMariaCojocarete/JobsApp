@@ -1,0 +1,62 @@
+﻿@model IEnumerable<JobsApp.Models.AnnouncementModel>
+
+@{
+    ViewData["Title"] = "IndexAnnouncement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>IndexAnnouncement</h1>
+
+@if (User.IsInRole("Company"))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExperienceLevel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExperienceLevel)
+            </td>
+            <td>
+                
+                @Html.ActionLink("Details", "Details", new {  id=item.Idannouncement  }) |
+                @if (User.Identity.Name == item.Idprofile)
+                {
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.Idannouncement  }) 
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.Idannouncement  }) 
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
