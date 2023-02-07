@@ -10,10 +10,12 @@ namespace JobsApp.Controllers
     public class ApplicationController : Controller
     {
         private Repository.ApplicationRepository _repository;
+        private Repository.AnnouncementRepository announcementRepository;
 
         public ApplicationController(ApplicationDbContext dbContext)
         {
             _repository = new Repository.ApplicationRepository(dbContext);
+            announcementRepository = new Repository.AnnouncementRepository(dbContext);
         }
 
         // GET: ApplicationController
@@ -32,9 +34,17 @@ namespace JobsApp.Controllers
         [Authorize(Roles = "Company")]
         public ActionResult ApplicationsToAnnouncement()
         {
-            var announcementId = new Guid(TempData["announcementApplications"].ToString());
-            var applicationsToAnnouncement = _repository.GetAllApplicationsByAnnouncement(announcementId);
-            return View("ApplicationsToAnnouncement", applicationsToAnnouncement);
+            if (TempData["announcementApplications"] != null )
+            {
+                var announcementId = new Guid(TempData["announcementApplications"].ToString());
+                var applicationsToAnnouncement = _repository.GetAllApplicationsByAnnouncement(announcementId);
+                return View("ApplicationsToAnnouncement", applicationsToAnnouncement);
+            }
+            else
+            {
+                var myAnnouncements = announcementRepository.GetAllAnnouncementsByProfile(User.Identity.Name);
+                return View("~/Views/Announcement/MyAnnouncements.cshtml", myAnnouncements);
+            }    
         }
 
         // GET: ApplicationController/Details/5
